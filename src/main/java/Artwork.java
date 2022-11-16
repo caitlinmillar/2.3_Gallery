@@ -7,7 +7,7 @@ public class Artwork{
     public Artwork (String title, String artist, int price, String nft){
     this.title = title;
     this.artist = artist;
-    this.price = 10;
+    this.price = price;
     this.nft = nft;
     }
     public String getTitle (){
@@ -29,8 +29,6 @@ public class Artwork{
         return this.nft;}
         public void setNft (String nft){
         this.nft = nft;}
-
-
 
 
 }

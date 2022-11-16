@@ -2,14 +2,21 @@ import java.util.ArrayList;
 
 public class Gallery {
     private String name;
-    private int till;
+    private double till;
     private ArrayList<Artwork> artworks;
+    private double artwork;
+  //  private int artworkCount;
 
-    public Gallery(String name) {
+    public Gallery(String name, int till, String artwork) {
         this.name = name;
-        this.till = 0;
-        this.artworks = new ArrayList();
+        this.till = till;
+        this.artworks = new ArrayList<>();
+        this.artwork = 100;
     }
+
+
+
+
 
     //Getters and Setters
     public String getName() {
@@ -20,25 +27,38 @@ public class Gallery {
         this.name = name;
     }
 
-    public int getTill() {
-        return this.till;
+    public double getTill(){
+        return till;
+    }
+    public void acceptPayment(double price) {
+        till += price;
     }
 
-    public void setTill(int till) {
-        this.till = till;
-    }
-
-    public ArrayList<Artwork> getartworks() {
+    public ArrayList<Artwork> getArtworks() {
         return this.artworks;
     }
-
-    public void setArtworks(ArrayList<Artwork> artworks) {
-        this.artworks = artworks;
-    }
-
+//
+//    public void setArtworks(ArrayList<Artwork> artworks) {
+//        this.artworks = artworks;
+//    }
+//    public void buyingArtwork(Gallery gallery){
+//        ArrayList<Artwork> artworks = gallery.getArtworks();
+//        for (Artwork artwork : artworks){
+//            if (Gallery.getArtworkCount() > 0){
+//            artworkCount += artwork.getPrice();
+//
+//            }
+//        }
+//
+//
+//        this.buyingArtwork= totalArtwork;
+//    }
 
     public int getArtworkCount(){
         return this.artworks.size();
+    }
+    public void addArtwork(Artwork artwork){
+        this.artworks.add(artwork);
     }
 
 }

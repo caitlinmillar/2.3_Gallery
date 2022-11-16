@@ -1,38 +1,39 @@
+import org.assertj.core.api.AbstractStringAssert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.awt.geom.Area;
+import java.math.BigInteger;
 
 import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class CustomerTest {
-    Customer losh;
+
+    private Artwork artwork;
+    private Customer customer;
 
     @BeforeEach
     public void setUp(){
-        losh = new Customer("Losh", 50000000);
+                this.customer = new Customer("Losh", 5000);
+    this.artwork = new Artwork("flower", "me", 22, "crying");
     }
 
     @Test
-    public void hasName(){
-        String name = losh.getName();
-        assertThat(name).isEqualTo("Losh");
+    public void canGetWallet(){
+        double actual = customer.getWallet();
+        double expected = 5000;
+        assertThat(actual).isEqualTo(expected);
     }
 
     @Test
-    public void hasWallet(){
-        int wallet = losh.getWallet();
-        assertThat(wallet).isEqualTo(50000000);
+    public void removesFromWallet(){
+        double actual = (customer.getWallet()) -
+                (artwork.getPrice());
+        double expected = 4978;
+        assertThat(actual).isEqualTo(expected);
     }
 
-    @Test
-    public void canBuyArtwork(){
-        Artwork monaLisa = new Artwork("Mona Lisa", "Leonardo DaVinci", 10, "Dancing Monkey");
-        Artwork sunflower = new Artwork("Sunflower", "Vincent VanGogh", 15000, "Singing Monkey");
-        Artwork theScream = new Artwork("The Scream", "Edvard Munch", 2, "Eating Monkey");
-        Artwork girlWithAPearlEarring = new Artwork("Girl with a pearl earring", "Johannes Vermeer,", 1000000, "Sleeping Monkey");
     }
 
-
-
-}
 
