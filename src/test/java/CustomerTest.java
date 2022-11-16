@@ -24,6 +24,14 @@ public class CustomerTest {
         assertThat(wallet).isEqualTo(50000000);
     }
 
+    @Test
+    public void canBuyArtwork(){
+        Artwork monaLisa = new Artwork("Mona Lisa", "Leonardo DaVinci", 10, "Dancing Monkey");
+        Artwork sunflower = new Artwork("Sunflower", "Vincent VanGogh", 15000, "Singing Monkey");
+        Artwork theScream = new Artwork("The Scream", "Edvard Munch", 2, "Eating Monkey");
+        Artwork girlWithAPearlEarring = new Artwork("Girl with a pearl earring", "Johannes Vermeer,", 1000000, "Sleeping Monkey");
+    }
+
 
 
 }
