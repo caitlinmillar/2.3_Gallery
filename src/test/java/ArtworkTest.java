@@ -8,18 +8,33 @@ public class ArtworkTest {
    @BeforeEach
 
  public void setUp(){
- artwork = new Artwork("Mona Lisa","Davinci", 10,"dancingMonkey");
+ artwork = new Artwork("Mona Lisa","DaVinci", 10,"Dancing Monkey");
  }
 
  @Test
     public void hasTitle(){
-       String title = MonaLisa.getTitle();
+       String title = artwork.getTitle();
        assertThat(title).isEqualTo("Mona Lisa");
  }
  @Test
     public void hasArtist(){
-       String artist =
+       String artist = artwork.getArtist();
+       assertThat(artist).isEqualTo("DaVinci");
  }
+
+ @Test
+    public void hasPrice(){
+       int price = artwork.getPrice();
+       assertThat(price).isEqualTo(10);
+   }
+    @Test
+    public void hasNft(){
+        String nft = artwork.getNft();
+        assertThat(nft).isEqualTo("Dancing Monkey");
+    }
+
+
+
 
 
 }
